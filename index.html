@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Pacifico&display=swap" rel="stylesheet">
+    <title>Chakrawyuha 2k24</title>
+    <style>
+        body{
+            background: linear-gradient(to bottom,#00000088,#00000088),url("/images/background.jpg") center center;
+            /* background-repeat: no-repeat; */
+            overflow: hidden;
+        }
+
+        .main-div{
+            width: 100%;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            font-family: 'Cinzel Decorative', cursive;
+        }
+        .main-head{
+            font-size: 60px;
+        color: #fff;
+        text-shadow:
+            0 0 7px #fff,
+            0 0 10px #fff,
+            0 0 21px #fff,
+            0 0 42px #0fa,
+            0 0 82px #0fa,
+            0 0 92px #0fa,
+            0 0 102px #0fa,
+            0 0 151px #0fa;
+        margin-bottom: 0;
+        }
+        .sub-head{
+            font-size: 30px;
+            color: #fff;
+            animation: flicker 1.5s infinite alternate;
+            margin-top: 0;
+        }
+        @keyframes flicker {
+    
+            0%, 18%, 22%, 25%, 53%, 57%, 100% {
+        
+                text-shadow:
+                0 0 4px #fff,
+                0 0 11px #fff,
+                0 0 19px #fff,
+                0 0 40px #0fa,
+                0 0 80px #0fa,
+                0 0 90px #0fa,
+                0 0 100px #0fa,
+                0 0 150px #0fa;
+            
+            }
+            
+            20%, 24%, 55% {        
+                text-shadow: none;
+            }    
+        }
+        /* .overlay-div{
+            background-color: #0000008c;
+            width: 100%;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            top: 0;
+            left: 0;
+            position: absolute;
+        } */
+        .c-blob{
+            position: absolute;
+            width: 200px;
+            aspect-ratio: 1;
+            border-radius: 50%;
+            /* background-color: #0fa; */
+            filter: blur(10px);
+        }
+    </style>
+</head>
+<body>
+    <div class="c-blob" id="blob"></div>
+    <div class="overlay-div"></div>
+    <div class="main-div">
+    <p class="main-head">Chakrawyuha 2k24</p>
+    <p class="sub-head">Coming soon..</p>
+    </div>
+</body>
+<script>
+    let mouse_blob=document.getElementById('blob');
+        window.onmousemove = e =>{
+            const x= e.clientX;
+            const new_x=x-mouse_blob.offsetWidth/2;
+            const y=e.clientY-mouse_blob.offsetHeight/2;
+            const blobframes={
+                transform: `translate(${new_x}px,${y}px)`
+            }
+            mouse_blob.animate(blobframes,{
+                duration:1000,
+                fill:"forwards"
+            });
+        }
+</script>
+</html>
